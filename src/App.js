@@ -2,7 +2,7 @@ import { people } from './ConstantData/scientistdata.js';
 import { GetImgUrl } from './Utility/util.js';
 
 export default function List() {
-  const listItems = people.map(person =>
+  const listItems = people.map(person  =>
     <li key={person.id}>
       <img
         src={GetImgUrl(person)}
