@@ -1,6 +1,6 @@
 import { render, screen, fireEvent } from "@testing-library/react";
-import { MemoryRouter } from "react-router-dom";
-import { AuthProvider } from "../src/AuthContext/AuthContext";
+// import { MemoryRouter } from "react-router-dom";
+// import { AuthProvider } from "../src/AuthContext/AuthContext";
 import App from "./App";
 
 describe("React App routing and pages", () => {
