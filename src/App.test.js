@@ -1,5 +1,5 @@
 import { render, screen, fireEvent } from "@testing-library/react";
-import { MemoryRouter } from "react-router-dom";
+import { MemoryRouter } from "../node_modules/react-router-dom";
 import { AuthProvider } from "../src/AuthContext/AuthContext";
 import App from "./App";
 
