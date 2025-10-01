@@ -1,24 +1,26 @@
-import { people } from './ConstantData/scientistdata.js';
-import { GetImgUrl } from './Utility/util.js';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import SignupPage from "./SignUpPage/signup";
+import LoginPage from "./LoginPage/Login";
+import Home from "./HomePage/HomePage";
+import ProtectedRoute from "./AuthContext/ProtectedRoute";
 
-export default function List() {
-  const listItems = people.map(person  =>
-    <li key={person.id}>
-      <img
-        src={GetImgUrl(person)}
-        alt={person.name}
-      />
-      <p>
-        <b>{person.name}:</b>
-        {' ' + person.profession + ' '}
-        known for {person.accomplishment}
-      </p>
-    </li>
-  );
+function App() {
   return (
-    <article>
-      <h1>Scientists</h1>
-      <ul>{listItems}</ul>
-    </article>
+    <Router>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <ProtectedRoute>
+              <Home />
+            </ProtectedRoute>
+          }
+        />
+        <Route path="/signup" element={<SignupPage />} />
+        <Route path="/login" element={<LoginPage />} />
+      </Routes>
+    </Router>
   );
 }
+
+export default App;
