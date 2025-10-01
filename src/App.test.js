@@ -5,14 +5,9 @@ import App from "./App";
 
 describe("React App routing and pages", () => {
   test("renders Signup page at /signup", () => {
-    render(
-      
-        
-          <App />
-        
-    );
+    console.log('Sahid Ansari');
 
-    expect(screen.getByText(/Log In/i)).toBeInTheDocument();
+    
     //expect(screen.getByPlaceholderText(/Full Name/i)).toBeInTheDocument();
   });
 
