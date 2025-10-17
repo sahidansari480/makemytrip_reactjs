@@ -27,22 +27,22 @@ export default function Home() {
   ]
 
 
-  const dropdownHandle = ()=>{
-    const drop_down_element = document.getElementById('user_logo');
-    if(down === 0){
-      drop_down_element.style.transition ='transform 0.3s ease-out'
-      drop_down_element.style.transform = 'rotate(-90deg)';
-      setdown(1);
+  // const dropdownHandle = ()=>{
+  //   const drop_down_element = document.getElementById('user_logo');
+  //   if(down === 0){
+  //     drop_down_element.style.transition ='transform 0.3s ease-out'
+  //     drop_down_element.style.transform = 'rotate(-90deg)';
+  //     setdown(1);
 
-      //console.log(down)
-    }
-    if (down === 1){
-      drop_down_element.style.transform = 'rotate(0deg)';
-      setdown(0);
-      //console.log(down)
-    }
+  //     //console.log(down)
+  //   }
+  //   if (down === 1){
+  //     drop_down_element.style.transform = 'rotate(0deg)';
+  //     setdown(0);
+  //     //console.log(down)
+  //   }
     
-  }
+  // }
 
   //dropdown end
 
