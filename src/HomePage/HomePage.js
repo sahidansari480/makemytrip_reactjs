@@ -52,7 +52,7 @@ export default function Home() {
         <nav className="navbar">
           <div className="left_side">
             <img alt="" src={home_img}></img>
-            <a href="#">News</a>
+            <a href="/news">News</a>
             <picture>
               {/* <img id="drop_down" src={down_arrow} onClick={dropdownHandle}></img> */}
 
@@ -60,7 +60,7 @@ export default function Home() {
             </picture>
           </div>
           <div className="right_side">
-            <a href="#">Home</a>
+            <a href="/home">Home</a>
             <picture id="user_logo">
               <DropdownUser iconSrc={user_logo} items={menuItems} />
             </picture>
