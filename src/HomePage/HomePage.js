@@ -51,7 +51,7 @@ export default function Home() {
       <div>
         <nav className="navbar">
           <div className="left_side">
-            <img  src={home_img}></img>
+            <img alt="" src={home_img}></img>
             <a href="#">News</a>
             <picture>
               {/* <img id="drop_down" src={down_arrow} onClick={dropdownHandle}></img> */}
