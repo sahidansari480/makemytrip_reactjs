@@ -28,6 +28,10 @@ export default function SignupPage() {
     setTimeout(() => navigate("/"), 1000);
   };
 
+  const handleLogin= () =>{
+    navigate("/login");
+  }
+
   return (
     <div className="signup-container">
       <div className="signup-card">
@@ -66,8 +70,10 @@ export default function SignupPage() {
             required
           />
           <button type="submit">Sign Up</button>
+          
         </form>
         {message && <p className="message">{message}</p>}
+        <button id="login_button" style={{marginTop : 10 +'px'}} onClick={handleLogin}>Go to Login</button>
       </div>
     </div>
   );
