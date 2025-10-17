@@ -18,7 +18,7 @@ export default function Home() {
 
   // dropdown
   const [down ,setdown] = useState(0);
-  const [open, setOpen] = useState(false);
+  //const [open, setOpen] = useState(false);
 
   const menuItems = [
     { label: "Profile", onClick: () => alert("Profile clicked") },
@@ -51,7 +51,7 @@ export default function Home() {
       <div>
         <nav className="navbar">
           <div className="left_side">
-            <img href="#" src={home_img}></img>
+            <img  src={home_img}></img>
             <a href="#">News</a>
             <picture>
               {/* <img id="drop_down" src={down_arrow} onClick={dropdownHandle}></img> */}
