@@ -16,6 +16,7 @@ function App() {
             </ProtectedRoute>
           }
         />
+        <Route path="/" element={<LoginPage />} />
         <Route path="/signup" element={<SignupPage />} />
         <Route path="/login" element={<LoginPage />} />
       </Routes>
