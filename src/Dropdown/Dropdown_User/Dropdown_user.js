@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import "../../CSS_file/Dropdown_user.css"; 
 
-const Dropdown_User = ({ iconSrc, items = [] }) => {
+const DropdownUser = ({ iconSrc, items = [] }) => {
   const [open, setOpen] = useState(false);
   const dropdownRef = useRef(null);
 
@@ -49,4 +49,4 @@ const Dropdown_User = ({ iconSrc, items = [] }) => {
   );
 };
 
-export default Dropdown_User;
+export default DropdownUser;

@@ -62,7 +62,7 @@ export default function Home() {
           <div className="right_side">
             <a href="#">Home</a>
             <picture id="user_logo">
-              <Dropdown_User iconSrc={user_logo} items={menuItems} />
+              <DropdownUser iconSrc={user_logo} items={menuItems} />
             </picture>
             
           </div>
