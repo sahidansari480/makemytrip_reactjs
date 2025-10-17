@@ -5,7 +5,7 @@ import "../CSS_file/HomePage.css";
 import down_arrow from "../Utility/images/dropdown-48.png"
 import home_img from "../Utility/images/MMYT.png"
 import Dropdown from "../Dropdown/Dropdown/Dropdown";
-import Dropdown_User from "../Dropdown/Dropdown_User/Dropdown_user";
+import DropdownUser from "../Dropdown/Dropdown_User/Dropdown_user";
 import user_logo from "../Utility/images/user.png"
 
 export default function Home() {
