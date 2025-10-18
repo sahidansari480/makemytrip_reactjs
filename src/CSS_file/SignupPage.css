@@ -1,4 +1,4 @@
-.signup-container {
+/* .signup-container {
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -22,4 +22,106 @@
 .signup-card button { padding: 0.75rem; background: #667eea; color: white; border: none; border-radius: 0.5rem; cursor: pointer; font-weight: bold; }
 .signup-card button:hover { background: #5a67d8; }
 #login_button { display: flex; flex-direction: column; gap: 1rem; padding-top: 10px; }
-.message { margin-top: 1rem; font-size: 0.9rem; }
+.message { margin-top: 1rem; font-size: 0.9rem; } */
+
+
+
+/* Full-screen centered background */
+.signup-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #2563eb, #1e40af);
+  background-size: cover;
+  background-position: center;
+  margin: 0;
+  padding: 0;
+}
+
+/* Signup card */
+.signup-card {
+  background-color: #fff;
+  padding: 40px 50px;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  width: 750px; /* wider for two columns */
+  text-align: center;
+  animation: fadeIn 0.6s ease;
+}
+
+.signup-card h1 {
+  font-size: 1.8rem;
+  color: #1e3a8a;
+  margin-bottom: 1.5rem;
+}
+
+/* Two-column layout */
+.signup-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px 24px; /* space between inputs */
+  text-align: left;
+}
+
+/* Input fields */
+.signup-form input {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.signup-form input:focus {
+  border-color: #2563eb;
+}
+
+/* Submit button spans full width */
+.signup-card button {
+  grid-column: 1 / -1; /* makes button full width */
+  padding: 12px 14px;
+  background: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 12px;
+  transition: background 0.3s ease;
+}
+
+.signup-card button:hover {
+  background: #1e40af;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+.signup-form select {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.signup-form select:focus {
+  border-color: #2563eb;
+}
+

@@ -45,11 +45,12 @@
 
 /* Items */
 .dropdown-item {
-  width: 70%;
+  width: 100%;
   padding: 10px 14px;
   text-align: left;
   background: none;
   border: none;
+  border-radius: 10px;
   cursor: pointer;
   transition: background 0.2s ease;
 }

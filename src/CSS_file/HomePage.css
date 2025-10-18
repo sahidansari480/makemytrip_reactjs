@@ -1,5 +1,5 @@
 .navbar {
-   background-color: #e0e0e0;
+   background-color: #b9b8a7;
   display: grid;
   grid-template-columns: 1fr 1fr; /* Creates two columns of equal width */
   gap: 20px; /* Adds space between grid items */
@@ -38,7 +38,7 @@
 img{
   cursor: pointer;
   margin-top : 8px;
-  height: 25px;
+  height: 30px;
 }
 
 
@@ -59,3 +59,20 @@ img{
     margin: 10px 0;
   }
 }
+
+.homepage{
+  background-image: url(../Utility/images/homepage_airplane.jpg);
+  background-size: cover;        /* fill entire screen */
+  background-position: center;   /* keep image centered */
+  background-repeat: no-repeat;  /* avoid repeating tiles */
+  background-attachment: fixed;  /* optional: parallax effect */
+  min-height: 93vh;                 /* full viewport height */
+  width: 100vw;                  /* full viewport width */
+  margin: 0;
+  padding: 0;
+  opacity: 70%;
+  background-color: rgba(54, 25, 25, .5)
+
+  
+}
+

@@ -23,7 +23,7 @@ export default function Home() {
   const menuItems = [
     { label: "Profile", onClick: () => alert("Profile clicked") },
     { label: "Settings", onClick: () => alert("Settings clicked") },
-    { label: "Logout", onClick: () => alert("Logout clicked") },
+    { label: "Logout", onClick: () => handleLogout() },
   ]
 
 
@@ -52,7 +52,7 @@ export default function Home() {
         <nav className="navbar">
           <div className="left_side">
             <img alt="" src={home_img}></img>
-            <a href="/news">News</a>
+            <a href="/news">MY Bookings</a>
             <picture>
               {/* <img id="drop_down" src={down_arrow} onClick={dropdownHandle}></img> */}
 
@@ -68,11 +68,12 @@ export default function Home() {
           </div>
         </nav>
       </div>
-      <div style={{ textAlign: "center", marginTop: "50px" }}>
-        <h1>🎉 Welcome Home!</h1>
+      <div className="homepage" >
+        {/* <h1>🎉 Welcome Home!</h1>
         <button onClick={handleLogout} style={{ marginTop: "20px", padding: "10px 20px" }}>
           Logout
-        </button>
+        </button> */}
+        <p>Sahid gsdjrtttdddddddddddddddddd</p>
       </div>
     </>
   );

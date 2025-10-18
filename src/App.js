@@ -3,6 +3,7 @@ import SignupPage from "./SignUpPage/signup";
 import LoginPage from "./LoginPage/Login";
 import Home from "./HomePage/HomePage";
 import ProtectedRoute from "./AuthContext/ProtectedRoute";
+//import "src/App.css"
 
 function App() {
   return (
