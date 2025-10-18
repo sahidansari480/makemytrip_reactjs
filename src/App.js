@@ -3,19 +3,21 @@ import SignupPage from "./SignUpPage/signup";
 import LoginPage from "./LoginPage/Login";
 import Home from "./HomePage/HomePage";
 import ProtectedRoute from "./AuthContext/ProtectedRoute";
+//import "src/App.css"
 
 function App() {
   return (
     <Router>
       <Routes>
         <Route
-          path="/"
+          path="/home"
           element={
             <ProtectedRoute>
               <Home />
             </ProtectedRoute>
           }
         />
+        <Route path="/" element={<LoginPage />} />
         <Route path="/signup" element={<SignupPage />} />
         <Route path="/login" element={<LoginPage />} />
       </Routes>

@@ -1,0 +1,78 @@
+.navbar {
+   background-color: #b9b8a7;
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Creates two columns of equal width */
+  gap: 20px; /* Adds space between grid items */
+
+  padding: 0 20px 5px 20px;
+  height: 50px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.15); 
+}
+
+.left_side {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.right_side {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+
+/* --- Navbar links --- */
+.navbar a {
+  color: #402121;
+  text-decoration: none;
+  margin: 0 20px;
+  font-size: 17px;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.navbar a:hover {
+  color: #1e3e46;
+  transform: translateY(-2px);
+}
+
+img{
+  cursor: pointer;
+  margin-top : 8px;
+  height: 30px;
+}
+
+
+
+/* --- Dropdown container --- */
+
+
+/* --- Responsive navbar --- */
+@media (max-width: 700px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    height: auto;
+    padding: 10px 20px;
+  }
+
+  .navbar a {
+    margin: 10px 0;
+  }
+}
+
+.homepage{
+  background-image: url(../Utility/images/homepage_airplane.jpg);
+  background-size: cover;        /* fill entire screen */
+  background-position: center;   /* keep image centered */
+  background-repeat: no-repeat;  /* avoid repeating tiles */
+  background-attachment: fixed;  /* optional: parallax effect */
+  min-height: 93vh;                 /* full viewport height */
+  width: 100vw;                  /* full viewport width */
+  margin: 0;
+  padding: 0;
+  opacity: 70%;
+  background-color: rgba(54, 25, 25, .5)
+
+  
+}
+

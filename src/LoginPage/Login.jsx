@@ -20,7 +20,7 @@ export default function LoginPage() {
     }
     setMessage("✅ Login successful! Redirecting...");
     login();
-    setTimeout(() => navigate("/"), 1000);
+    setTimeout(() => navigate("/home"), 1000);
   };
 
   return (

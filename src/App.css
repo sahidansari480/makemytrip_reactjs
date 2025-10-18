@@ -1,5 +1,5 @@
- li {
-      color: blue;
-      font-size: 16px;
-      margin-bottom: 5px;
+ html, body {
+        height: 100%;
+        margin: 0; /* Remove default body margin */
+        padding: 0; /* Remove default body padding */
     }
