@@ -3,18 +3,19 @@ import { createContext, useState } from "react";
 export const AuthContext = createContext();
 
 export function AuthProvider({ children }) {
+  
   const [isAuthenticated, setIsAuthenticated] = useState(
-    () => localStorage.getItem("isAuthenticated") === "true"
+    () => sessionStorage.getItem("isAuthenticated") === "true"
   );
 
   const login = () => {
     setIsAuthenticated(true);
-    localStorage.setItem("isAuthenticated", "true");
+    sessionStorage.setItem("isAuthenticated", "true");
   };
 
   const logout = () => {
     setIsAuthenticated(false);
-    localStorage.setItem("isAuthenticated", "false");
+    sessionStorage.setItem("isAuthenticated", "false");
   };
 
   return (

@@ -11,7 +11,7 @@ export default function SignupPage() {
     email: "",
     password: "",
     confirmPassword: "",
-    gender: "Select",
+    gender: "M",
     zipcode: "",
     address: "",
   });
@@ -101,8 +101,6 @@ export default function SignupPage() {
             onChange={handleChange}
             required
           >
-            <option value="" disabled hidden></option>
-            <option value = "-Select Gender-">Select Gender</option>
             <option value="M">Male</option>
             <option value="F">Female</option>
           </select>

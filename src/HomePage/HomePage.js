@@ -18,6 +18,7 @@ export default function Home() {
 
   // dropdown
   const [down ,setdown] = useState(0);
+  const userName = sessionStorage.getItem('userName');
   //const [open, setOpen] = useState(false);
 
   const menuItems = [
@@ -60,7 +61,7 @@ export default function Home() {
             </picture>
           </div>
           <div className="right_side">
-            <a href="/home">Home</a>
+            <a href="/home">Hello {userName}</a>
             <picture id="user_logo">
               <DropdownUser iconSrc={user_logo} items={menuItems} />
             </picture>
@@ -73,7 +74,7 @@ export default function Home() {
         <button onClick={handleLogout} style={{ marginTop: "20px", padding: "10px 20px" }}>
           Logout
         </button> */}
-        <p>Sahid gsdjrtttdddddddddddddddddd</p>
+        
       </div>
     </>
   );

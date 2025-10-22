@@ -1,5 +1,7 @@
 .navbar {
-   background-color: #b9b8a7;
+
+  background-color: #EBEBEB;
+  color: #212529;
   display: grid;
   grid-template-columns: 1fr 1fr; /* Creates two columns of equal width */
   gap: 20px; /* Adds space between grid items */
@@ -23,15 +25,17 @@
 
 /* --- Navbar links --- */
 .navbar a {
-  color: #402121;
-  text-decoration: none;
+  color: #212529;
+  text-decoration:none;
+  font-weight: bold;
   margin: 0 20px;
-  font-size: 17px;
+  font-size: 20px;
+  font-family: 'Lato', sans-serif;
   transition: color 0.3s ease, transform 0.2s ease;
 }
 
 .navbar a:hover {
-  color: #1e3e46;
+  color: #454d4f;
   transform: translateY(-2px);
 }
 
@@ -70,7 +74,7 @@ img{
   width: 100vw;                  /* full viewport width */
   margin: 0;
   padding: 0;
-  opacity: 70%;
+  /* opacity: 70%; */
   background-color: rgba(54, 25, 25, .5)
 
   
