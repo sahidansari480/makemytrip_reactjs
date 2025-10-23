@@ -32,7 +32,8 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background: linear-gradient(135deg, #2563eb, #1e40af);
+  background-color: #c4d0f7;
+  /* background: linear-gradient(135deg, #2563eb, #1e40af); */
   background-size: cover;
   background-position: center;
   margin: 0;

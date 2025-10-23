@@ -8,20 +8,19 @@ import "reactjs-popup/dist/index.css";
 import "../CSS_file/Modal.css";
 
 
-import axios from "axios";
+import axios, { isCancel } from "axios";
+import { Modal } from "../Utility/Modal/Modal";
 
 export default function LoginPage() {
   const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({ email: "", password: "" });
   const [message, setMessage] = useState("");
   const navigate = useNavigate();
-  const [popUpOpen, setpopUpOpen] = useState(true);
+  const [showModal, setshowModal] = useState(false);
   const { login } = useContext(AuthContext);
-  const [popUpcontrol, setpopUpcontrol] = useState(false);
-
-  // spinner
-
-  //const Spinner = () => <div className="loading-spinner"></div>;
+  const [propOne,setPropOne] =  useState('');
+  const [propTwo,setPropTwo] =  useState('');
+  var network_error = false;
 
   const handleChange = (e) =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -53,9 +52,9 @@ export default function LoginPage() {
     try {
       const response = await axios.post(
         "https://localhost:7151/api/Login",
-        loginObj
+        loginObj,
+        {timeout: 10000}
       );
-      debugger;
       // const response = await fetch('https://localhost:7151/api/Login',{
       //   method : 'POST',
       //   headers : {
@@ -65,13 +64,17 @@ export default function LoginPage() {
       // });
 
       if (response.status === 200 && response.data === "unauthorised") {
-        setpopUpcontrol(true);
+        
         setLoading(false);
-        setpopUpOpen(true);
+        setPropOne('⚠️ User Not Found');
+        setPropTwo('Please register to continue.')
+        setshowModal(true);
         // navigate('/login');
+        network_error=false;
 
-        throw new Error(`HTTP Error! status : ${response.status}`);
+        //throw new Error(`HTTP Error! status : ${response.status}`);
       }
+      else{
 
       const result = await response.data;
       sessionStorage.setItem("userName", result["userName"]);
@@ -79,10 +82,21 @@ export default function LoginPage() {
       login();
       setLoading(false);
       navigate("/home");
-      console.log("Success", result);
-      setpopUpOpen(false);
+      //console.log("Success", result);
+      
+      setshowModal(false);
+
+      }
+
+      
     } catch (error) {
-      console.error("Error", error);
+      setLoading(false);
+      network_error = true;
+      setPropOne(error.code)
+      setPropTwo('Network Error . Please contact Admin')
+      setshowModal(true);
+      console.error(error);
+      //console.error("Error", error);
     }
 
     // setTimeout(() => {
@@ -123,28 +137,15 @@ export default function LoginPage() {
           )}
         </div>
         <div>
-          {popUpcontrol && (
-          <Popup
-          open={popUpOpen}
-          closeOnDocumentClick
-          onClose={() => setpopUpOpen(false)}
-          modal
-          nested
-        >
-          <div className="modern-modal">
-            <h2>⚠️ User Not Found</h2>
-            <p>Please register to continue.</p>
-            <div className="modal-buttons">
-              <button className="btn btn-close" onClick={() => setpopUpOpen(false)}>
-                Close
-              </button>
-              <button className="btn btn-primary" onClick={() => navigate("/signup")}>
-                Signup
-              </button>
-            </div>
-          </div>
-        </Popup>
-          )}
+          
+          <Modal 
+          propOne={propOne}
+          propTwo={propTwo}
+          isOpen={showModal}
+          onClose={()=>setshowModal(false)}
+          control={network_error}
+           />
+          
         </div>
 
         {/* {message && <p className="message">{message}</p>} */}

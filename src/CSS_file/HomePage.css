@@ -1,7 +1,7 @@
 .navbar {
 
-  background-color: #EBEBEB;
-  color: #212529;
+  background-color: #c4d0f7;
+  color: #cbe0f6;
   display: grid;
   grid-template-columns: 1fr 1fr; /* Creates two columns of equal width */
   gap: 20px; /* Adds space between grid items */

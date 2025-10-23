@@ -15,6 +15,8 @@ export function AuthProvider({ children }) {
 
   const logout = () => {
     setIsAuthenticated(false);
+    sessionStorage.removeItem("userName");
+    sessionStorage.removeItem("token");
     sessionStorage.setItem("isAuthenticated", "false");
   };
 
