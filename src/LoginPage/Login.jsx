@@ -3,18 +3,17 @@ import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../AuthContext/AuthContext";
 import "../CSS_file/LoginPage.css";
 import "../CSS_file/Spinner.css";
-import Popup from "reactjs-popup";
 import "reactjs-popup/dist/index.css";
 import "../CSS_file/Modal.css";
 
 
-import axios, { isCancel } from "axios";
+import axios from "axios";
 import { Modal } from "../Utility/Modal/Modal";
 
 export default function LoginPage() {
   const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({ email: "", password: "" });
-  const [message, setMessage] = useState("");
+  //const [message, setMessage] = useState("");
   const navigate = useNavigate();
   const [showModal, setshowModal] = useState(false);
   const { login } = useContext(AuthContext);
@@ -28,7 +27,6 @@ export default function LoginPage() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!formData.email || !formData.password) {
-      setMessage("❌ Please fill all fields");
       return;
     }
     // //setMessage("✅ Login successful! Redirecting...");

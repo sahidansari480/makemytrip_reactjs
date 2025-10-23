@@ -17,7 +17,7 @@ export default function Home() {
   };
 
   // dropdown
-  const [down ,setdown] = useState(0);
+
   const userName = sessionStorage.getItem('userName');
   //const [open, setOpen] = useState(false);
 
