@@ -19,7 +19,7 @@ export default function LoginPage() {
   const { login } = useContext(AuthContext);
   const [propOne,setPropOne] =  useState('');
   const [propTwo,setPropTwo] =  useState('');
-  var network_error = false;
+  const [netWorkError,setNetworkError] = useState(false);
 
   const handleChange = (e) =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -49,7 +49,7 @@ export default function LoginPage() {
 
     try {
       const response = await axios.post(
-        "https://localhost:7151/api/Login",
+        "https://flightapisahid.runasp.net/api/Login",
         loginObj,
         {timeout: 10000}
       );
@@ -62,13 +62,13 @@ export default function LoginPage() {
       // });
 
       if (response.status === 200 && response.data === "unauthorised") {
-        
+
         setLoading(false);
         setPropOne('⚠️ User Not Found');
         setPropTwo('Please register to continue.')
         setshowModal(true);
         // navigate('/login');
-        network_error=false;
+        setNetworkError(false);
 
         //throw new Error(`HTTP Error! status : ${response.status}`);
       }
@@ -88,14 +88,18 @@ export default function LoginPage() {
 
       
     } catch (error) {
+
       setLoading(false);
-      network_error = true;
+      setNetworkError(true);
       setPropOne(error.code)
       setPropTwo('Network Error . Please contact Admin')
       setshowModal(true);
-      console.error(error);
+      //console.error(error);
       //console.error("Error", error);
     }
+
+
+    
 
     // setTimeout(() => {
     //   login();
@@ -103,6 +107,10 @@ export default function LoginPage() {
     //   navigate("/home");
     // }, 1000);
   };
+  const handleCloseModal = (()=>{
+      setshowModal(false);
+      //alert('Modal closed');
+    })
 
   return (
     <div className="login-container">
@@ -140,8 +148,8 @@ export default function LoginPage() {
           propOne={propOne}
           propTwo={propTwo}
           isOpen={showModal}
-          onClose={()=>setshowModal(false)}
-          control={network_error}
+          onClose={handleCloseModal}
+          control={netWorkError}
            />
           
         </div>

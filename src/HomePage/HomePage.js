@@ -7,6 +7,7 @@ import home_img from "../Utility/images/MMYT.png"
 import Dropdown from "../Dropdown/Dropdown/Dropdown";
 import DropdownUser from "../Dropdown/Dropdown_User/Dropdown_user";
 import user_logo from "../Utility/images/user.png"
+import backgroundImg from '../Utility/images/homepage_airplane.jpg'
 
 export default function Home() {
   const { logout } = useContext(AuthContext);
@@ -22,7 +23,7 @@ export default function Home() {
   //const [open, setOpen] = useState(false);
 
   const menuItems = [
-    { label: "Profile", onClick: () => alert("Profile clicked") },
+    { label: "Profile", onClick: () => navigate("/myProfile") },
     { label: "Settings", onClick: () => alert("Settings clicked") },
     { label: "Logout", onClick: () => handleLogout() },
   ]
@@ -44,6 +45,8 @@ export default function Home() {
   //   }
     
   // }
+   let current_url = window.location.pathname;
+  // console.log(current_url);
 
   //dropdown end
 
@@ -52,7 +55,7 @@ export default function Home() {
       <div>
         <nav className="navbar">
           <div className="left_side">
-            <img alt="" src={home_img}></img>
+            <img id="homePageIcon" alt="" onClick={() => navigate('/home')} src={home_img}></img>
             <a href="/news">MY Bookings</a>
             <picture>
               {/* <img id="drop_down" src={down_arrow} onClick={dropdownHandle}></img> */}
@@ -61,7 +64,7 @@ export default function Home() {
             </picture>
           </div>
           <div className="right_side">
-            <a href="/home">Hello {userName}</a>
+            <a href="/myProfile">Hello {userName}</a>
             <picture id="user_logo">
               <DropdownUser iconSrc={user_logo} items={menuItems} />
             </picture>
@@ -69,6 +72,8 @@ export default function Home() {
           </div>
         </nav>
       </div>
+
+    {current_url =='/home' && <div className="homePageImg"><img src={backgroundImg}></img></div>}
       <div className="homepage" >
         {/* <h1>🎉 Welcome Home!</h1>
         <button onClick={handleLogout} style={{ marginTop: "20px", padding: "10px 20px" }}>
@@ -76,6 +81,7 @@ export default function Home() {
         </button> */}
         
       </div>
+      
     </>
   );
 }

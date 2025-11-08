@@ -37,7 +37,7 @@ export function Modal({propOne,propTwo,isOpen = true,onClose,control}){
         <button className="btn btn-close" onClick={handleClose}>
         Close
         </button>
-        <button hidden={!control} className="btn btn-primary" onClick={() => navigate("/signup")}>
+        <button hidden={control} className="btn btn-primary" onClick={() => navigate("/signup")}>
         Signup
         </button>
     </div>

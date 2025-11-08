@@ -39,7 +39,7 @@
   transform: translateY(-2px);
 }
 
-img{
+#homePageIcon {
   cursor: pointer;
   margin-top : 8px;
   height: 30px;
@@ -64,19 +64,23 @@ img{
   }
 }
 
-.homepage{
-  background-image: url(../Utility/images/homepage_airplane.jpg);
-  background-size: cover;        /* fill entire screen */
-  background-position: center;   /* keep image centered */
-  background-repeat: no-repeat;  /* avoid repeating tiles */
-  background-attachment: fixed;  /* optional: parallax effect */
-  min-height: 93vh;                 /* full viewport height */
-  width: 100vw;                  /* full viewport width */
-  margin: 0;
-  padding: 0;
-  /* opacity: 70%; */
-  background-color: rgba(54, 25, 25, .5)
 
-  
+
+
+.homePageImg {
+  width: 100%;
+  height: 93vh; /* Full viewport height */
+  overflow: hidden;
+  position: relative;
 }
+
+/* Image styling */
+.homePageImg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Covers the entire area while maintaining aspect ratio */
+  object-position: center; /* Centers the image */
+  display: block;
+}
+
 
