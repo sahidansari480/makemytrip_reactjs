@@ -41,6 +41,7 @@
   opacity: 1;
   transform: translateX(-40%) translateY(0); /* 👈 animate nicely down */
   pointer-events: auto;
+  background-color: #c4d0f7;
 }
 
 /* Items */
