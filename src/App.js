@@ -10,6 +10,7 @@ function App() {
   return (
     <Router>
       <Routes>
+        <Route path="*" element={<LoginPage/>}></Route>
         <Route path="/home" element={<ProtectedRoute> <Home /></ProtectedRoute>}/>
         <Route path="/" element={<LoginPage />} />
         <Route path="/signup" element={<SignupPage />} />
