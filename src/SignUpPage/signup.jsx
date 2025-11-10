@@ -37,6 +37,7 @@ export default function SignupPage() {
   };
 
   const handleLogin = () => {
+    login();
     navigate("/login");
   };
 
