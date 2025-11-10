@@ -2,6 +2,7 @@ import { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../AuthContext/AuthContext";
 import "../CSS_file/SignupPage.css";
+import { color } from "framer-motion";
 
 export default function SignupPage() {
   const [formData, setFormData] = useState({
@@ -21,7 +22,6 @@ export default function SignupPage() {
 
   const handleChange = (e) =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
-    
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -29,6 +29,7 @@ export default function SignupPage() {
       setMessage("❌ Passwords do not match!");
       return;
     }
+    debugger;
     console.log(formData);
     setMessage("✅ Signup successful! Redirecting...");
     login(); // auto-login
@@ -93,8 +94,6 @@ export default function SignupPage() {
             required
           />
 
-
-
           <select
             name="gender"
             value={formData.gender}
@@ -104,7 +103,7 @@ export default function SignupPage() {
             <option value="M">Male</option>
             <option value="F">Female</option>
           </select>
-          
+
           <input
             type="text"
             name="zipcode"
@@ -114,15 +113,15 @@ export default function SignupPage() {
             required
           />
           <button type="submit">Sign Up</button>
+          <button
+            id="login_button" 
+            style={{ marginTop: 10 + "px",backgroundColor:'#1f5f7a' }}
+            onClick={handleLogin}
+          >Login</button>
         </form>
         {message && <p className="message">{message}</p>}
-        <button
-          id="login_button"
-          style={{ marginTop: 10 + "px" }}
-          onClick={handleLogin}
-        >
-          Go to Login
-        </button>
+       
+          
       </div>
     </div>
   );
