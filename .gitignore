@@ -12,7 +12,6 @@
 /build
 
 # misc
-CODEOWNERS*
 .DS_Store
 .env.local
 .env.development.local
